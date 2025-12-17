@@ -1,0 +1,219 @@
+/* ===========================================================
+    ✨ CYBER NEON WAVE - STROKE ANN EDITION ✨
+=========================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --blue: #00c6ff;
+  --purple: #d500f9;
+  --pink: #ff4081;
+
+  --danger: #ff4d6d;
+  --danger2: #ff1e56;
+
+  --bg-gradient: linear-gradient(135deg, var(--blue), var(--purple), var(--pink), var(--blue));
+
+  --glass-bg: rgba(255, 255, 255, 0.15);
+  --glass-border: rgba(255, 255, 255, 0.3);
+  --text-light: #ffffff;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-light);
+  min-height: 100vh;
+  margin: 0;
+  background: #0a0a1a;
+  display: block;
+  padding-bottom: 80px;
+}
+
+/* Background bergerak */
+body::before {
+  content: "";
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: var(--bg-gradient);
+  background-size: 250% 250%;
+  filter: blur(140px);
+  opacity: 0.9;
+  z-index: -1;
+  animation: rotateBg 40s linear infinite, moveBgGradient 25s ease-in-out infinite alternate;
+}
+
+@keyframes rotateBg {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes moveBgGradient {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 100% 100%; }
+}
+
+/* Card Glass */
+.card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 25px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+  animation: fadeUp 1s ease;
+  padding: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Input */
+.form-control, .form-select {
+  background-color: rgba(255,255,255,0.92);
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.4);
+  color: #1a1a1a;
+  transition: 0.25s;
+}
+
+/* Fokus input biar lebih “niat” */
+.form-control:focus, .form-select:focus {
+  outline: none;
+  border-color: rgba(0,198,255,0.9);
+  box-shadow: 0 0 0 0.20rem rgba(0,198,255,0.25);
+}
+
+/* Button Prediksi */
+.btn-primary {
+  background: linear-gradient(90deg, var(--blue), var(--purple), var(--pink));
+  background-size: 200% 100%;
+  border-radius: 50px;
+  border: none;
+  padding: 14px 28px;
+  box-shadow: 0 0 15px var(--purple);
+  animation: floatButton 3s infinite ease-in-out;
+}
+
+@keyframes floatButton {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* Hasil Prediksi (Info) */
+.alert-info {
+  background: linear-gradient(90deg, var(--blue), var(--purple), var(--pink));
+  color: #fff;
+  border-radius: 15px;
+  padding: 15px;
+  font-weight: 600;
+  animation: popUp 0.8s ease;
+  border: none;
+}
+
+/* Error (Danger) — tambahan penting untuk app stroke */
+.alert-danger {
+  background: linear-gradient(90deg, var(--danger2), var(--danger), var(--pink));
+  color: #fff;
+  border-radius: 15px;
+  padding: 15px;
+  font-weight: 700;
+  animation: popUp 0.8s ease;
+  border: none;
+  box-shadow: 0 0 18px rgba(255, 30, 86, 0.55);
+}
+
+@keyframes popUp {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Perbesar Judul (Tombol) */
+.title-button {
+  font-size: 2rem;
+  padding: 18px 65px;
+  border-radius: 60px;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* Button Neon */
+.btn-title-neon {
+  background: linear-gradient(90deg, var(--blue), var(--purple), var(--pink));
+  background-size: 200% 200%;
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow:
+      0 0 10px var(--blue),
+      0 0 20px var(--purple),
+      0 0 30px var(--pink);
+  transition: 0.4s ease-in-out;
+  animation: titleBtnGlow 3s infinite ease-in-out alternate;
+}
+
+@keyframes titleBtnGlow {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.07); }
+}
+
+/* Footer */
+footer {
+  color: #ffffffbd;
+  text-shadow: 0 0 8px white;
+  margin-top: 20px;
+}
+
+/* Box prediksi neon */
+.prediksi-box {
+  max-width: 520px;
+  width: 100%;
+  padding: 16px 28px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border-radius: 35px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+
+  background: linear-gradient(90deg, var(--blue), var(--purple), var(--pink), var(--blue));
+  background-size: 300% 300%;
+  animation: performaGlow 4s ease-in-out infinite,
+             performaFloat 3s ease-in-out infinite;
+  box-shadow: 0 0 15px var(--pink), 0 0 30px var(--purple);
+  color: white !important;
+}
+
+@keyframes performaGlow {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes performaFloat {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-6px); }
+}
+
+.prediksi-box:hover {
+  box-shadow:
+    0 0 25px var(--blue),
+    0 0 35px var(--purple),
+    0 0 45px var(--pink);
+  transform: scale(1.03);
+  transition: 0.3s ease-in-out;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  .title-button { font-size: 1.4rem; padding: 14px 22px; }
+  .card { padding: 18px; }
+}

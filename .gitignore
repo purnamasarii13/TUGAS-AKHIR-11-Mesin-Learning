@@ -1,0 +1,56 @@
+# =====================
+# Python cache
+# =====================
+__pycache__/
+*.py[cod]
+
+# =====================
+# Virtual environment
+# =====================
+venv/
+.venv/
+env/
+
+# =====================
+# OS files
+# =====================
+.DS_Store
+Thumbs.db
+
+# =====================
+# Jupyter
+# =====================
+.ipynb_checkpoints/
+*.ipynb
+
+# =====================
+# Dataset / file besar (TIDAK dipakai saat deploy)
+# =====================
+*.csv
+*.zip
+
+# =====================
+# Logs
+# =====================
+*.log
+
+# =====================
+# Env vars
+# =====================
+.env
+
+# =====================
+# Build artifacts
+# =====================
+build/
+dist/
+*.egg-info/
+
+# =====================
+# ⚠️ JANGAN DI-IGNORE (WAJIB UNTUK DEPLOY)
+# =====================
+# model_stroke_mlp.pkl
+# scaler.pkl
+# columns.json
+# templates/
+# static/
